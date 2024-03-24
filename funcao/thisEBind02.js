@@ -1,9 +1,12 @@
-function pessoa() {
+function Pessoa() {
     this.idade = 0
 
     // a funcao setInterval dispara outra funcao a partir de um determinado intervalo que voce passou.
+    const self = this
     setInterval(function() {
-        this.idade++
-        console.log(this.idade)
-    }, 10000)
+        self.idade++
+        console.log(self.idade)
+    }/*.bind(this)*/, 1000)
 }
+
+new Pessoa
