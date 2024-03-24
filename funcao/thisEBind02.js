@@ -5,5 +5,5 @@ function pessoa() {
     setInterval(function() {
         this.idade++
         console.log(this.idade)
-    }, 1000)
+    }, 10000)
 }
