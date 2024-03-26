@@ -7,4 +7,6 @@ function pessoa(nome) {
 }
 
 const p1 = new pessoa('Nestor')
+const p2 = new pessoa('Nestor')
 p1.falar()
+p2.falar()
