@@ -1,7 +1,7 @@
 function classificaDia(numero) {
     switch (numero) {
         case 1:
-            return "Fim de semana"
+            return "FDS"
         case 2:
         case 3:
         case 4:
