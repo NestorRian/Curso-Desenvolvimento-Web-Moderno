@@ -1,5 +1,5 @@
 function formatarValorDecimal(valorDecimal) {
-    valorEmReais = `R$ ${valorDecimal.toFixed(2).toString().replace(".", ",")}`
+    let valorEmReais = `R$ ${valorDecimal.toFixed(2).toString().replace(".", ",")}`
     console.log(valorEmReais)
 }
 
