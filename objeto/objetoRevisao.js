@@ -5,10 +5,10 @@ produto.Nome = 'Cadeira'
 produto['Marca da Cadeira'] = 'Generica'
 produto.Preco = 220
 
-console.log(produto)
+//console.log(produto)
 delete produto.Preco
 delete produto['Marca da Cadeira']
-console.log(produto)
+//console.log(produto)
 
 const carro = {
     modelo: 'A4',
@@ -36,4 +36,9 @@ const carro = {
 carro.proprietario.endereco.numero = 1000
 carro.proprietario.endereco.logadouro = 'Av Dep. Emilio'
 //carro['proprietario']['endereco']['logadouro'] = 'Av Dep. Emilio'
+//console.log(carro)
+
+delete carro.proprietario.endereco
+delete carro.calcularValorDeSeguro
 console.log(carro)
+console.log(carro.condutores)
