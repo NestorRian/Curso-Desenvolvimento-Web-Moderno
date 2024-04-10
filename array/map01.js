@@ -19,3 +19,4 @@ let FormatParaReais = elemento => `R$ ${parseFloat(elemento).toFixed(2).replace(
 
 console.log(soma10(10))
 console.log(triplo(100))
+console.log(FormatParaReais(1000))
