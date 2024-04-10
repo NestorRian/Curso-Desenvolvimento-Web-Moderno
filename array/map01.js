@@ -13,6 +13,8 @@ let resultado2 = num.map(function(elemento) {
 console.log(resultado1)
 console.log(resultado2)
 
-const soma10 = elemento => elemento + 10
-const triplo = elemento => elemento * 3
-const FormatParaReais = elemento => `R$ ${parseFloat(elemento).toFixed(2).replace('.', ',')}`
+let soma10 = elemento => elemento + 10
+let triplo = elemento => elemento * 3
+let FormatParaReais = elemento => `R$ ${parseFloat(elemento).toFixed(2).replace('.', ',')}`
+
+console.log(soma10(10))
