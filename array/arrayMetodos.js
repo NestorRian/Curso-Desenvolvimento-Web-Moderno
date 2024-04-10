@@ -1,5 +1,5 @@
 const pilotos = ['Vettel', 'Alonso', 'Raikkonen', 'Massa']
-pilotos.pop() // Remoto o ultimo elemento do Array
+pilotos.pop() // Remove o ultimo elemento do Array
 console.log(pilotos)
 
 pilotos.push('Verstappen') // Adiciona um elemento no ultimo indice do Array
