@@ -17,6 +17,5 @@ let soma10 = elemento => elemento + 10
 let triplo = elemento => elemento * 3
 let FormatParaReais = elemento => `R$ ${parseFloat(elemento).toFixed(2).replace('.', ',')}`
 
-console.log(soma10(10))
-console.log(triplo(100))
-console.log(FormatParaReais(1000))
+const resultado = num.map(soma10).map(triplo).map(FormatParaReais)
+console.log(resultado)
