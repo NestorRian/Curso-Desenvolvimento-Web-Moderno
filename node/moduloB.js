@@ -3,5 +3,6 @@ module.exports = {
     boaNoite() {
         return 'Boa Noite!'
     },
-    saudacoes: 'Hello World'
+    saudacoes: 'Hello World',
+    conexao: 'A'
 }
