@@ -8,3 +8,4 @@ module.exports.c = 3
 console.log(module.exports)
 
 module.exports = { publico: true }
+module.exports = { nome: 'Nestor'}
