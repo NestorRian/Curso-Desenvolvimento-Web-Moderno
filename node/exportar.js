@@ -9,3 +9,5 @@ console.log(module.exports)
 
 module.exports = { publico: true }
 module.exports = { nome: 'Nestor'}
+
+
