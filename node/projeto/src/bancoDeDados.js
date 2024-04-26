@@ -1,5 +1,3 @@
-const { property } = require("lodash")
-
 const sequence = {
     _id: 1,
     get id() { return this._id++ }
@@ -20,3 +18,5 @@ function getProduto(id) {
 function getProdutos() {
     return Object.values(produtos)
 }
+
+module.exports = { salvarProdutos, getProduto, getProdutos }
