@@ -12,7 +12,7 @@ esperarPor(2500)
     .then(() => console.log('Executa do promise 3...'))
 
 async function executar() {
-    await esperarPor(1000)
+    await esperarPor(10500)
     console.log('Async/Await 1...')
     await esperarPor(1000)
     console.log('Async/Await 2...')
