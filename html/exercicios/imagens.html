@@ -1,37 +1,38 @@
-<p>
-    <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" 
-    alt="Muro da Cidade"
-    width="513" height="342"
-    title="Muro da Cidade por Tarso Bessa"
-    >
-</p>
+<div wm-slides>
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" alt="Muro da Cidade" width="513" height="342"
+            title="Muro da Cidade por Tarso Bessa">
+    </p>
 
-<p>
-    <img src="http://files.cod3r.com.br/curso-web/imagem2.gif" 
-    alt="Intro Cod3r" height="342">
-</p>
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem2.gif" alt="Intro Cod3r" height="342">
+    </p>
 
-<p class="circular">
-    <img src="http://files.cod3r.com.br/curso-web/imagem3.png" 
-    alt="Rio de Janeiro" height="342">
-</p>
+    <p class="circular">
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png" alt="Rio de Janeiro" height="342">
+    </p>
 
-<p class="texto">
-    <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" 
-    alt="Avatar" height="50" aling="left">
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio molestias veniam ducimus nisi quasi ipsum ab aliquam cumque reprehenderit assumenda repellat, placeat recusandae officiis nihil unde quis sint ratione tempora.
-</p>
+    <p class="texto">
+        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" alt="Avatar" height="50" aling="left">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio molestias veniam ducimus nisi quasi ipsum ab
+        aliquam cumque reprehenderit assumenda repellat, placeat recusandae officiis nihil unde quis sint ratione
+        tempora.
+    </p>
 
 
-<p class="cidade">
-    <picture>
-        <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png"
-        media="(min-width: 600px)">
-        <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="Logo">
-    </picture>
-</p>
+    <p class="cidade">
+        <picture>
+            <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png" media="(min-width: 600px)">
+            <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="Logo">
+        </picture>
+    </p>
+</div>
 
 <style>
+    p {
+        display: none;
+        position: absolute;
+    }
 
     .texto {
         width: 400px;
@@ -49,5 +50,50 @@
         background-repeat: no-repeat;
         background-size: 200%;
     }
-
 </style>
+
+<script>
+    function mover(elem, inicio, fim, passo, callback) {
+        const novoInicio = inicio - passo
+        if (novoInicio >= fim) {
+            elem.style.right = novoInicio + 'px'
+            setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7)
+        } else {
+            callback()
+        }
+    }
+
+    //const p = document.querySelector('[wm-slides] > p')
+    //p.style.display = 'block'
+    //mover(p, 1500, -520, 5) -->
+
+    function slider() {
+        const elementos = document.querySelectorAll('[wm-slides] > p')
+        const slides = Array.from(elementos)
+        exibirSlide(slides, slides[0])
+    }
+
+    function exibirSlide(slides, slide) {
+        slide.style.display = 'block'
+        
+        const inicio = innerWidth
+        const fim = -100
+
+        slide.style.right = `${inicio}px`
+        slide.style.display = 'flex'
+
+        mover(slide, inicio, fim, 3, () => {
+            slide.style.display = 'none'
+            exibirSlide(slides, getProximo(slides, slide))
+        })
+    }
+
+    function getProximo(lista, atual)  {
+        const i = lista.indexOf(atual) + 1
+        return i < lista.length ? lista[i] : lista[0]
+
+    }
+
+    slider()
+
+</script>
